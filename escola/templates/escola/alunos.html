@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos cadastrados</title>
+</head>
+<body>
+
+    <h1>Alunos cadastrados</h1>
+
+    {% for aluno in alunos %}
+        <section>
+            <h2>{{ aluno.nome }} {{ aluno.sobrenome }}</h2>
+            <p>E-mail: {{ aluno.email }}</p>
+            <p>Cursos matriculados:</p>
+
+            <ul>
+                {% for curso in aluno.cursos.all %}
+                    <li>{{ curso.titulo }}</li>
+                {% empty %}
+                    <li>Nenhum curso matriculado.</li>
+                {% endfor %}
+            </ul>
+        </section>
+    {% empty %}
+        <p>Nenhum aluno cadastrado.</p>
+    {% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h2>Home</h2>
+    <p>Navegue pela aplicação usando os links abaixo:</p>
+    <ul>
+        <li><a href="{% url 'listar_alunos' %}">Alunos</a></li>
+        <li><a href="{% url 'listar_cursos' %}">Cursos</a></li>
+        <li><a href="{% url 'admin:index' %}">Página do admin</a></li>
+    </ul>
+</body>
+</html>
