@@ -37,7 +37,8 @@ sistema-educacional/
 │   ├── templates/
 │   │   └── escola/
 │   │       ├── alunos.html
-│   │       └── cursos.html
+|   |       ├── cursos.html
+│   │       └── home.html
 │   ├── admin.py
 │   ├── models.py
 │   ├── urls.py
