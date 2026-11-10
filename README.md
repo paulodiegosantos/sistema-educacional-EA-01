@@ -61,7 +61,7 @@ sistema-educacional/
 ### 2. Clonar o repositório
 
 ```bash
-git clone [https://github.com/paulodiegosantos/sistema-educacional-EA-01.git](https://github.com/paulodiegosantos/sistema-educacional-EA-01.git)
+git clone https://github.com/paulodiegosantos/sistema-educacional-EA-01.git
 ```
 
 Entre na pasta do projeto:
@@ -115,5 +115,5 @@ O projeto utiliza SQLite como banco de dados.
 O arquivo `db.sqlite3` está incluído no repositório e contém registros de exemplo de alunos, cursos e suas respectivas matrículas. Dessa forma, ao clonar o projeto, os dados de demonstração já estarão disponíveis.
 
 ## Autor
-Paulo Diego
-Projeto acadêmico desenvolvido como prática de desenvolvimento web utilizando o framework Django.
+
+Projeto acadêmico desenvolvido por **Paulo Diego** como prática de desenvolvimento web utilizando o framework Django.
