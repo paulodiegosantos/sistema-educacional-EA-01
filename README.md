@@ -84,7 +84,7 @@ sistema-educacional-EA-01/
 ### 2. Clonar o repositório
 
 ```bash
-git clone https://github.com/paulodiegosantos/sistema-educacional-EA-01.git
+git clone -b EA2 --single-branch https://github.com/paulodiegosantos/sistema-educacional-EA-01.git
 ```
 
 Entre na pasta do projeto:
