@@ -19,3 +19,9 @@ class Produto(models.Model):
     preco = models.DecimalField(max_digits=10, decimal_places=2)
     validade = models.DateField()
 
+class Usuario(models.Model):
+    nome = models.CharField(max_length=100)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.nome

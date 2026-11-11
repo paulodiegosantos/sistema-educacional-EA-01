@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from .models import Aluno, Curso, Produto
+from .models import Aluno, Curso, Produto, Usuario
 from .forms import ProdutoForm
+from rest_framework import generics
+from .serializers import UsuarioSerializer
 
 # Create your views here.
 def listar_alunos(request):
@@ -41,3 +43,7 @@ def listar_produtos(request):
     return render(request, 'escola/produtos.html',{
         'produtos': produtos
     })
+
+class UsuarioListAPIView(generics.ListAPIView):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
