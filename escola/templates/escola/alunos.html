@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alunos cadastrados</title>
-</head>
-<body>
+{% extends 'escola/base.html' %}
 
-    <h1>Alunos cadastrados</h1>
+{% block content %}
+
+    <h2>Alunos cadastrados</h2>
 
     {% for aluno in alunos %}
         <section>
@@ -27,5 +22,4 @@
         <p>Nenhum aluno cadastrado.</p>
     {% endfor %}
 
-</body>
-</html>
+{% endblock %}

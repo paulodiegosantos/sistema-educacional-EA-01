@@ -1,8 +1,8 @@
 # Sistema Educacional
 
-Sistema web desenvolvido com **Python e Django** para uma empresa do setor educacional, permitindo o cadastro, gerenciamento e consulta de alunos e cursos.
+Sistema web desenvolvido com **Python e Django** para uma empresa do setor educacional, permitindo o cadastro, gerenciamento e consulta de alunos, cursos e produtos.
 
-O projeto foi desenvolvido como parte de uma Experiência de Aprendizagem do curso de Análise e Desenvolvimento de Sistemas.
+O projeto foi desenvolvido como parte das Experiências de Aprendizagem do curso de Análise e Desenvolvimento de Sistemas, sendo desenvolvido incrementalmente a cada etapa.
 
 ## Tecnologias utilizadas
 
@@ -14,6 +14,8 @@ O projeto foi desenvolvido como parte de uma Experiência de Aprendizagem do cur
 
 ## Funcionalidades
 
+### Alunos e cursos — EA1
+
 - Cadastro de alunos com nome, sobrenome e e-mail.
 - Cadastro de cursos com título e descrição.
 - Relacionamento entre alunos e cursos (muitos-para-muitos).
@@ -22,10 +24,26 @@ O projeto foi desenvolvido como parte de uma Experiência de Aprendizagem do cur
 - Listagem de cursos cadastrados.
 - Exibição dos cursos em que cada aluno está matriculado.
 
+### Produtos — EA2
+
+- Modelo Produto com nome, descrição, preço e validade.
+- Formulário próprio para cadastro de produtos, sem depender do Django Admin.
+- Validação dos dados do formulário.
+- Cadastro e armazenamento de produtos no banco de dados.
+- Exibição da data de validade no formato brasileiro (dd/mm/aaaa).
+- Listagem dos produtos cadastrados.
+- Gerenciamento de produtos pelo Django Admin.
+
+### Navegação e estrutura
+
+- Página inicial com acesso às funcionalidades do sistema.
+- Navegação entre as páginas.
+- Template base (`base.html`) compartilhado pelas demais páginas, utilizando o bloco `content`.
+
 ## Estrutura do projeto
 
 ```text
-sistema-educacional/
+sistema-educacional-EA-01/
 │
 ├── config/
 │   ├── settings.py
@@ -36,10 +54,15 @@ sistema-educacional/
 │   ├── migrations/
 │   ├── templates/
 │   │   └── escola/
+│   │       ├── base.html
+│   │       ├── home.html
 │   │       ├── alunos.html
-|   |       ├── cursos.html
-│   │       └── home.html
+│   │       ├── cursos.html
+│   │       ├── produtos.html
+│   │       └── produto_form.html
+│   │
 │   ├── admin.py
+│   ├── forms.py
 │   ├── models.py
 │   ├── urls.py
 │   └── views.py
@@ -61,13 +84,13 @@ sistema-educacional/
 ### 2. Clonar o repositório
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/paulodiegosantos/sistema-educacional-EA-01.git
 ```
 
 Entre na pasta do projeto:
 
 ```bash
-cd sistema-educacional
+cd sistema-educacional-EA-01
 ```
 
 ### 3. Criar o ambiente virtual
@@ -90,7 +113,13 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 6. Executar o projeto
+### 6. Executar as migrações
+
+```bash
+py manage.py migrate
+```
+
+### 7. Executar o projeto
 
 ```bash
 py manage.py runserver
@@ -104,16 +133,19 @@ http://127.0.0.1:8000/
 
 | Página | Endereço |
 |---|---|
+| Página inicial | http://127.0.0.1:8000/ |
 | Alunos | http://127.0.0.1:8000/alunos/ |
 | Cursos | http://127.0.0.1:8000/cursos/ |
+| Listagem de produtos | http://127.0.0.1:8000/produtos/ |
+| Cadastro de produtos | http://127.0.0.1:8000/produtos/novo/ |
 | Django Admin | http://127.0.0.1:8000/admin/ |
 
 ## Banco de dados
 
 O projeto utiliza SQLite como banco de dados.
 
-O arquivo `db.sqlite3` está incluído no repositório e contém registros de exemplo de alunos, cursos e suas respectivas matrículas. Dessa forma, ao clonar o projeto, os dados de demonstração já estarão disponíveis.
+O arquivo `db.sqlite3` está incluído no repositório e contém registros de exemplo de alunos, cursos, matrículas e produtos. Dessa forma, ao clonar o projeto, os dados de demonstração já estarão disponíveis.
 
 ## Autor
 
-Projeto acadêmico desenvolvido como prática de desenvolvimento web utilizando o framework Django.
+Projeto acadêmico desenvolvido por **Paulo Diego** como prática de desenvolvimento web utilizando o framework Django.
